@@ -176,6 +176,29 @@
                 <CheckBox HorizontalAlignment="Left"
                           Content="{x:Static resx:Resources.SettingsUseLogarithmicVolume}"
                           IsChecked="{Binding UseLogarithmicVolume, Mode=TwoWay}" />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock 
+                        VerticalAlignment="Center"
+                        Style="{StaticResource BodyText}"
+                        Text="{x:Static resx:Resources.SettingsDefaultVolume}" />
+                    <Slider 
+                        Grid.Column="1"
+                        Minimum="0" Maximum="100" 
+                        Value="{Binding DefaultVolume, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                        IsTabStop="True" />
+                    <TextBlock 
+                        Grid.Column="2"
+                        VerticalAlignment="Center"
+                        Text="{Binding DefaultVolume, StringFormat='{}{0}%'}" />
+                </Grid>
             </StackPanel>
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:EarTrumpetLegacySettingsPageViewModel}">

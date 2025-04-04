@@ -1377,6 +1377,15 @@ namespace EarTrumpet.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Default app volume.
+        /// </summary>
+        public static string SettingsDefaultVolume {
+            get {
+                return ResourceManager.GetString("SettingsDefaultVolume", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Configure shortcuts and get help.
         /// </summary>
         public static string SettingsDescriptionText {
