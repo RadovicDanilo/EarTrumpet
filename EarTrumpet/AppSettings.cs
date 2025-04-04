@@ -166,6 +166,12 @@ namespace EarTrumpet
             set => _settings.Set("UseLogarithmicVolume", value);
         }
 
+        public int DefaultVolume
+        {
+            get => _settings.Get("DefaultVolume", 100);
+            set => _settings.Set("DefaultVolume", value);
+        }
+
         public WINDOWPLACEMENT? FullMixerWindowPlacement
         {
             get => _settings.Get("FullMixerWindowPlacement", default(WINDOWPLACEMENT?));

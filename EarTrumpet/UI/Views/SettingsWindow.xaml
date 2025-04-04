@@ -176,28 +176,36 @@
                 <CheckBox HorizontalAlignment="Left"
                           Content="{x:Static resx:Resources.SettingsUseLogarithmicVolume}"
                           IsChecked="{Binding UseLogarithmicVolume, Mode=TwoWay}" />
-                <Grid>
+                <Grid Margin="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <TextBlock 
+                        Grid.Row="0" Grid.Column="0"
                         VerticalAlignment="Center"
                         Style="{StaticResource BodyText}"
-                        Text="{x:Static resx:Resources.SettingsDefaultVolume}" />
+                        Text="{x:Static resx:Resources.SettingsDefaultVolume}"
+                        Margin="0,0,10,0" />
                     <Slider 
-                        Grid.Column="1"
+                        Grid.Row="0" Grid.Column="1"
                         Minimum="0" Maximum="100" 
-                        Value="{Binding DefaultVolume, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                        IsTabStop="True" />
-                    <TextBlock 
-                        Grid.Column="2"
+                        Value="{Binding DefaultVolume, Mode=TwoWay}" 
+                        TickFrequency="1" 
+                        IsSnapToTickEnabled="True"
                         VerticalAlignment="Center"
-                        Text="{Binding DefaultVolume, StringFormat='{}{0}%'}" />
+                        Height="24"
+                        Margin="0,0,10,0" />
+                    <TextBlock 
+                        Grid.Row="0" Grid.Column="2"
+                        VerticalAlignment="Center"
+                        FontWeight="SemiBold"
+                        Text="{Binding DefaultVolume, Mode=OneWay, StringFormat='{}{0}%'}" /> 
                 </Grid>
             </StackPanel>
         </DataTemplate>

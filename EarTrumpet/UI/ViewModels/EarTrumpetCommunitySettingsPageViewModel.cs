@@ -9,6 +9,16 @@
             set => _settings.UseLogarithmicVolume = value;
         }
         
+        public int DefaultVolume
+        {
+            get => _settings.DefaultVolume;
+            set  
+            {
+                _settings.DefaultVolume = value;
+                RaisePropertyChanged(nameof(DefaultVolume));
+            }
+        }
+
         public EarTrumpetCommunitySettingsPageViewModel(AppSettings settings) : base(null)
         {
             _settings = settings;
